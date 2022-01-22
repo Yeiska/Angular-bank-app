@@ -263,10 +263,13 @@
   }
 
   /* Responsive Styles */
-  @media screen and (max-width: 767px) {
+  @media screen and (max-width: 425px) {
     .card-container > *:not(.circle-link) ,
     .terminal {
       width: 100%;
+    }
+    .body {
+      background-color: lightblue;
     }
 
     .card:not(.highlight-card) {
