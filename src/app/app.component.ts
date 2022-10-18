@@ -18,6 +18,13 @@ export class AppComponent implements OnInit {
   visibleTransactions: Transactions[] = [];
   
   account: Account = ACCOUNT;
+  tran: Transactions[] = [
+    {
+            type: "",
+            description: "",
+            amount: 0
+    }
+  ];
   // account: Account = {
   //   ownerName: "Jon",
   //   ownerLastName: "Snow",
@@ -81,5 +88,14 @@ export class AppComponent implements OnInit {
     } else {
       this.visibleTransactions = this.account.transactions;
     }
+  }
+
+  submit(){
+    this.account.transactions.push({
+      amount : this.tran[0].amount,
+      type : "tranfer",
+      description : this.tran[0].description
+    });
+    this.account.totalBalance = this.account.totalBalance - this.tran[0].amount;
   }
 }
